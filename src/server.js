@@ -8,7 +8,8 @@ app.use(bodyparser.json());
 mongoose.connect('mongodb+srv://Priyansha:ps123456@cluster0.liennbj.mongodb.net/tododb').then(
     function(){
         app.get("/" ,function(req, res){
-            res.send('Welcome to homepage');
+             const response = {statuscode: res.statuscode , message:"Welcome to homepage"}
+            res.send(response);
         } );
         
         app.post("/notes/add" , async function(req,res){
